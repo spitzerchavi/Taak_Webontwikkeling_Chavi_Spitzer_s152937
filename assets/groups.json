@@ -4,7 +4,7 @@
         "name": "Up Syndrome",
         "description": "Dit is een groep voor ouders van kinderen met het syndroom van down",
         "numberOfMembers": 25,
-        "profileImage": "url_to_image_1",
+        "profileImage": "https://raw.githubusercontent.com/spitzerchavi/Taak_Webontwikkeling_Chavi_Spitzer_s152937/main/public/group.jpg",
         "dateStarted": "2022-01-01",
         "members": ["Member 1", "Member 2"],
         "leader": {
@@ -21,7 +21,7 @@
         "name": "Circle of hope",
         "description": "Dit is een ondersteuningsgroep voor kankerpatienten",
         "numberOfMembers": 13,
-        "profileImage": "url_to_image_2",
+        "profileImage":"https://raw.githubusercontent.com/spitzerchavi/Taak_Webontwikkeling_Chavi_Spitzer_s152937/main/public/group.jpg",
         "dateStarted": "2022-02-01",
         "members": ["Member 3", "Member 4"],
         "leader": {
@@ -37,8 +37,8 @@
         "id": 3,
         "name": "Anna banana",
         "description": "Deze groep is voor mensen die kampen met annorexia",
-        "numberOfMembers": 7,
-        "profileImage": "url_to_image_1",
+        "numberOfMembers": 17,
+        "profileImage": "https://raw.githubusercontent.com/spitzerchavi/Taak_Webontwikkeling_Chavi_Spitzer_s152937/main/public/group.jpg",
         "dateStarted": "2022-01-01",
         "members": ["Member 1", "Member 2"],
         "leader": {
@@ -55,7 +55,7 @@
         "name": "Werk aan de winkel",
         "description": "Dit is een groep voor mensen die om eender welke reden, behalve pensioen, arbeidsongeschikt zijn",
         "numberOfMembers": 15,
-        "profileImage": "url_to_image_2",
+        "profileImage": "https://raw.githubusercontent.com/spitzerchavi/Taak_Webontwikkeling_Chavi_Spitzer_s152937/main/public/group.jpg",
         "dateStarted": "2022-02-01",
         "members": ["Member 3", "Member 4"],
         "leader": {
@@ -72,7 +72,7 @@
         "name": "Support Group 1",
         "description": "This is support group 1",
         "numberOfMembers": 10,
-        "profileImage": "url_to_image_1",
+        "profileImage": "https://raw.githubusercontent.com/spitzerchavi/Taak_Webontwikkeling_Chavi_Spitzer_s152937/main/public/group.jpg",
         "dateStarted": "2022-01-01",
         "members": ["Member 1", "Member 2"],
         "leader": {
@@ -89,7 +89,7 @@
         "name": "Support Group 2",
         "description": "This is support group 2",
         "numberOfMembers": 15,
-        "profileImage": "url_to_image_2",
+        "profileImage": "https://raw.githubusercontent.com/spitzerchavi/Taak_Webontwikkeling_Chavi_Spitzer_s152937/main/public/group.jpg",
         "dateStarted": "2022-02-01",
         "members": ["Member 3", "Member 4"],
         "leader": {
@@ -106,7 +106,7 @@
         "name": "Support Group 1",
         "description": "This is support group 1",
         "numberOfMembers": 10,
-        "profileImage": "url_to_image_1",
+        "profileImage": "https://raw.githubusercontent.com/spitzerchavi/Taak_Webontwikkeling_Chavi_Spitzer_s152937/main/public/group.jpg",
         "dateStarted": "2022-01-01",
         "members": ["Member 1", "Member 2"],
         "leader": {
@@ -123,7 +123,7 @@
         "name": "Support Group 2",
         "description": "This is support group 2",
         "numberOfMembers": 15,
-        "profileImage": "url_to_image_2",
+        "profileImage": "https://raw.githubusercontent.com/spitzerchavi/Taak_Webontwikkeling_Chavi_Spitzer_s152937/main/public/group.jpg",
         "dateStarted": "2022-02-01",
         "members": ["Member 3", "Member 4"],
         "leader": {
@@ -140,7 +140,7 @@
         "name": "Support Group 1",
         "description": "This is support group 1",
         "numberOfMembers": 10,
-        "profileImage": "url_to_image_1",
+        "profileImage": "https://raw.githubusercontent.com/spitzerchavi/Taak_Webontwikkeling_Chavi_Spitzer_s152937/main/public/group.jpg",
         "dateStarted": "2022-01-01",
         "members": ["Member 1", "Member 2"],
         "leader": {
@@ -157,7 +157,7 @@
         "name": "Support Group 2",
         "description": "This is support group 2",
         "numberOfMembers": 15,
-        "profileImage": "url_to_image_2",
+        "profileImage": "https://raw.githubusercontent.com/spitzerchavi/Taak_Webontwikkeling_Chavi_Spitzer_s152937/main/public/group.jpg",
         "dateStarted": "2022-02-01",
         "members": ["Member 3", "Member 4"],
         "leader": {

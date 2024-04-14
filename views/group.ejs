@@ -1,5 +1,6 @@
 <%-include('partials/header')%>
 
+<img src="<%= group.profileImage %>" alt="" width="200" height="200">
 <p><%=group.name%></p>
 <p><%=group.description%></p>
 <p><%=group.numberOfMembers%></p>
@@ -8,7 +9,7 @@
 <p><%=group.status%></p>
 <p><a href="/leaders/<%=group.leader.id%>"><%=group.leader.name%></a></p>
 <% for(let i = 0; i<group.numberOfMembers; i++){ %>
-    <p><%= group.mermbers[i] %></p>
+    <p><%= group.members[i] %></p>
 <% } %>
 
 
