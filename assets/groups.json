@@ -10,7 +10,7 @@
         "leader": {
             "id": 1,
             "name": "Chana Weiser",
-            "mail": "weiser.chana@supperters.com",
+            "mail": "weiser.chana@supporters.com",
             "phone": "+32 123 456 789"
         },
         "isRemote": true,
@@ -27,7 +27,7 @@
         "leader": {
             "id": 2,
             "name": "Thomas De Vries",
-            "mail": "de.vries.thomas@supperters.com",
+            "mail": "de.vries.thomas@supporters.com",
             "phone": "+32 987 654 321"
         },
         "isRemote": false,
@@ -44,7 +44,7 @@
         "leader": {
             "id": 1,
             "name": "Chana Weiser",
-            "mail": "weiser.chana@supperters.com",
+            "mail": "weiser.chana@supporters.com",
             "phone": "+32 123 456 789"
         },
         "isRemote": true,

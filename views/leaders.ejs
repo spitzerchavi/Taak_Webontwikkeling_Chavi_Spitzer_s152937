@@ -1,11 +1,17 @@
 <%- include('partials/header') %>
 
 <table>
+    <tr>
+        <th>Naam</th>
+        <th>Telefoon</th>
+        <th>Email</th>
+    </tr>
+
     <% for(let i=0;i<leaders.length;i++) { %>
     <tr>
-        <td><a href="leaders/<%=leaders[i].id%>"><%=scientists[i].name%></a></td>
-        <td><%=scientists[i].name%></td>
-        <td><%=scientists[i].mail%></td>
+        <td><a href="leaders/<%=leaders[i].id%>"><%=leaders[i].name%></a></td>
+        <td><%=leaders[i].phone%></td>
+        <td><%=leaders[i].mail%></td>
         
     </tr>
     <% } %>

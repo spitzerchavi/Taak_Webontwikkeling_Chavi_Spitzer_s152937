@@ -2,16 +2,16 @@
 <%- include('search') %>
     <table>
         <tr>
-            <th><button type="button" id="sortName" onclick="sort(nameDirection, 1)">Naam</button></th>
-            <th><button type="button" id="sortMembers" onclick="sort(memberDirection, 2)">Aantal leden</button></th>
-            <th><button type="button" id="sortRomote" onclick="sort(remoteDirection, 3)">Locatie</button></th>
-            <th><button type="button" id="sortLeader" onclick="sort(leaderDirection, 4)">"Leider</button></th>
-            <th><button type="button" id="sortStatus" onclick="sort(statusDirection, 5)">Status</button></th>
+            <th><button type="button" id="sortName" onclick="sort(0, 1)">Naam</button></th>
+            <th><button type="button" id="sortMembers" onclick="sort(1, 2)">Aantal leden</button></th>
+            <th><button type="button" id="sortRomote" onclick="sort(2, 3)">Locatie</button></th>
+            <th><button type="button" id="sortLeader" onclick="sort(3, 4)">"Leider</button></th>
+            <th><button type="button" id="sortStatus" onclick="sort(4, 5)">Status</button></th>
         </tr>
         <% for(let i=0;i<groups.length;i++) { %>
         <tr>
             <td><a href="groups/<%=groups[i].id%>"><%=groups[i].name%></a></td>
-            <td><%=groups[i].numberOfembers%></td>
+            <td><%=groups[i].numberOfMembers%></td>
             <% if(groups[i].isRemote == true) { %>
                 <td>Remote</td> 
             <% } else { %>
@@ -24,210 +24,33 @@
     </table>
     <script>
         // Set all directions as if it's descending, this way when clicking first time it will set to ascending
-        let nameDirection = false;
-        let membersDirection = false;
-        let remoteDirection = false;
-        let leaderDirecton = false;
-        let statusDirecton = false;
+        let directions = [false, false, false, false, false];
 
-        function sort(column, child) {
-            if(column == false){
-                let table = document.querySelector("table");
-                let rows = Array.from(table.querySelectorAll("tr"));
-                rows.shift(); // Remove the header row from the array
-                rows.sort(function(a, b) {
-                    let nameA = a.querySelector("td:nth-child(child)").innerText;
-                    let nameB = b.querySelector("td:nth-child(child)").innerText;
-                    return nameA.localeCompare(nameB);
-                });
-                table.innerHTML = ""; // Clear the table
-                rows.forEach(function(row) {
-                table.appendChild(row); // Append the sorted rows back to the table
-                column = true;
-                })
+        function sort(columnIndex, child)   {
+            let table = document.querySelector("table");
+            let rows = Array.from(table.querySelectorAll("tr"));
+            rows.shift(); // Remove the header row from the array
+
+            rows.sort(function(a, b) {
+            let nameA = a.querySelector(`td:nth-child(${child})`).innerText;
+            let nameB = b.querySelector(`td:nth-child(${child})`).innerText;
+            if(directions[columnIndex] == false){
+            return nameA.localeCompare(nameB);
             } else {
-                let table = document.querySelector("table");
-                let rows = Array.from(table.querySelectorAll("tr"));
-                rows.shift(); // Remove the header row from the array
-                rows.sort(function(a, b) {
-                    let nameA = a.querySelector("td:nth-child(child)").innerText;
-                    let nameB = b.querySelector("td:nth-child(child)").innerText;
-                    return nameB.localeCompare(nameA);
-                });
-                table.innerHTML = ""; // Clear the table
-                rows.forEach(function(row) {
-                table.appendChild(row); // Append the sorted rows back to the table
-                column = false;
-                });
+            return nameB.localeCompare(nameA);
             }
-        };
-        /*
-        // Add event listener to sort by name
-        document.getElementById("sortName").addEventListener("click", function() {
-            
-            if(nameDirection == false){
-                let table = document.querySelector("table");
-                let rows = Array.from(table.querySelectorAll("tr"));
-                rows.shift(); // Remove the header row from the array
-                rows.sort(function(a, b) {
-                    let nameA = a.querySelector("td:first-child").innerText;
-                    let nameB = b.querySelector("td:first-child").innerText;
-                    return nameA.localeCompare(nameB);
-                });
-                table.innerHTML = ""; // Clear the table
-                rows.forEach(function(row) {
-                table.appendChild(row); // Append the sorted rows back to the table
-                nameDirection = true;
-                })
-            } else {
-                let table = document.querySelector("table");
-                let rows = Array.from(table.querySelectorAll("tr"));
-                rows.shift(); // Remove the header row from the array
-                rows.sort(function(a, b) {
-                    let nameA = a.querySelector("td:first-child").innerText;
-                    let nameB = b.querySelector("td:first-child").innerText;
-                    return nameB.localeCompare(nameA);
-                });
-                table.innerHTML = ""; // Clear the table
-                rows.forEach(function(row) {
-                table.appendChild(row); // Append the sorted rows back to the table
-                nameDirection = false;
-                });
-            }
+            });
+
+            while (table.rows.length > 1) {
+            table.deleteRow(1);
+            } // Clear the table
+            rows.forEach(function(row) {
+            table.appendChild(row); // Append the sorted rows back to the table
         });
 
-        // Add event listener to sort by members
-        document.getElementById("sortMembers").addEventListener("click", function() {
-            if(memberDirection == false){
-                let table = document.querySelector("table");
-                let rows = Array.from(table.querySelectorAll("tr"));
-                rows.shift(); // Remove the header row from the array
-                rows.sort(function(a, b) {
-                    let nameA = a.querySelector("td:nth-child(2)").innerText;
-                    let nameB = b.querySelector("td:nth-child(2)").innerText;
-                    return nameA.localeCompare(nameB);
-                });
-                table.innerHTML = ""; // Clear the table
-                rows.forEach(function(row) {
-                table.appendChild(row); // Append the sorted rows back to the table
-                memberDirection = true;
-                })
-            } else {
-                let table = document.querySelector("table");
-                let rows = Array.from(table.querySelectorAll("tr"));
-                rows.shift(); // Remove the header row from the array
-                rows.sort(function(a, b) {
-                    let nameA = a.querySelector("td:nth-child(2)").innerText;
-                    let nameB = b.querySelector("td:nth-child(2)").innerText;
-                    return nameB.localeCompare(nameA);
-                });
-                table.innerHTML = ""; // Clear the table
-                rows.forEach(function(row) {
-                table.appendChild(row); // Append the sorted rows back to the table
-                memberDirection = false;
-                });
-            }
-        });
-
-        // Add event listener to sort by location
-        document.getElementById("sortRemote").addEventListener("click", function() {
-            if(remoteDirection == false){
-                let table = document.querySelector("table");
-                let rows = Array.from(table.querySelectorAll("tr"));
-                rows.shift(); // Remove the header row from the array
-                rows.sort(function(a, b) {
-                    let nameA = a.querySelector("td:nth-child(3)").innerText;
-                    let nameB = b.querySelector("td:nth-child(3)").innerText;
-                    return nameA.localeCompare(nameB);
-                });
-                table.innerHTML = ""; // Clear the table
-                rows.forEach(function(row) {
-                table.appendChild(row); // Append the sorted rows back to the table
-                reoteDirection = true;
-                })
-            } else {
-                let table = document.querySelector("table");
-                let rows = Array.from(table.querySelectorAll("tr"));
-                rows.shift(); // Remove the header row from the array
-                rows.sort(function(a, b) {
-                    let nameA = a.querySelector("td:nth-child(3)").innerText;
-                    let nameB = b.querySelector("td:nth-child(3)").innerText;
-                    return nameB.localeCompare(nameA);
-                });
-                table.innerHTML = ""; // Clear the table
-                rows.forEach(function(row) {
-                table.appendChild(row); // Append the sorted rows back to the table
-                remoteDirection = false;
-                });
-            }
-        });
-
-        // Add event listener to sort by leadername
-        document.getElementById("sortLeader").addEventListener("click", function() {
-            if(leaderDirection == false){
-                let table = document.querySelector("table");
-                let rows = Array.from(table.querySelectorAll("tr"));
-                rows.shift(); // Remove the header row from the array
-                rows.sort(function(a, b) {
-                    let nameA = a.querySelector("td:nth-child(4)").innerText;
-                    let nameB = b.querySelector("td:nth-child(4)").innerText;
-                    return nameA.localeCompare(nameB);
-                });
-                table.innerHTML = ""; // Clear the table
-                rows.forEach(function(row) {
-                table.appendChild(row); // Append the sorted rows back to the table
-                leaderDirection = true;
-                })
-            } else {
-                let table = document.querySelector("table");
-                let rows = Array.from(table.querySelectorAll("tr"));
-                rows.shift(); // Remove the header row from the array
-                rows.sort(function(a, b) {
-                    let nameA = a.querySelector("td:nth-child(4)").innerText;
-                    let nameB = b.querySelector("td:nth-child(4)").innerText;
-                    return nameB.localeCompare(nameA);
-                });
-                table.innerHTML = ""; // Clear the table
-                rows.forEach(function(row) {
-                table.appendChild(row); // Append the sorted rows back to the table
-                mleaderDirection = false;
-                });
-            }
-        });
-        
-        // Add event listener to sort by status
-        document.getElementById("sortStatus").addEventListener("click", function() {
-            if(statusDirection == false){
-                let table = document.querySelector("table");
-                let rows = Array.from(table.querySelectorAll("tr"));
-                rows.shift(); // Remove the header row from the array
-                rows.sort(function(a, b) {
-                    let nameA = a.querySelector("td:nth-child(5)").innerText;
-                    let nameB = b.querySelector("td:nth-child(5)").innerText;
-                    return nameA.localeCompare(nameB);
-                });
-                table.innerHTML = ""; // Clear the table
-                rows.forEach(function(row) {
-                table.appendChild(row); // Append the sorted rows back to the table
-                statusDirection = true;
-                })
-            } else {
-                let table = document.querySelector("table");
-                let rows = Array.from(table.querySelectorAll("tr"));
-                rows.shift(); // Remove the header row from the array
-                rows.sort(function(a, b) {
-                    let nameA = a.querySelector("td:nth-child(5)").innerText;
-                    let nameB = b.querySelector("td:nth-child(5)").innerText;
-                    return nameB.localeCompare(nameA);
-                });
-                table.innerHTML = ""; // Clear the table
-                rows.forEach(function(row) {
-                table.appendChild(row); // Append the sorted rows back to the table
-                statusDirection = false;
-                });
-            }
-        });
-        */
+        // Toggle the direction for the next sort
+        directions[columnIndex] = !directions[columnIndex];
+}
     </script>
 
 <%- include('partials/footer') %>
