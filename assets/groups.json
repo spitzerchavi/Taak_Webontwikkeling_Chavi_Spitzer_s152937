@@ -1,0 +1,172 @@
+[
+    {
+        "id": 1,
+        "name": "Up Syndrome",
+        "description": "Dit is een groep voor ouders van kinderen met het syndroom van down",
+        "numberOfMembers": 25,
+        "profileImage": "url_to_image_1",
+        "dateStarted": "2022-01-01",
+        "members": ["Member 1", "Member 2"],
+        "leader": {
+            "id": 1,
+            "name": "Chana Weiser",
+            "mail": "weiser.chana@supperters.com",
+            "phone": "+32 123 456 789"
+        },
+        "isRemote": true,
+        "status": "Active"
+    },
+    {
+        "id": 2,
+        "name": "Circle of hope",
+        "description": "Dit is een ondersteuningsgroep voor kankerpatienten",
+        "numberOfMembers": 13,
+        "profileImage": "url_to_image_2",
+        "dateStarted": "2022-02-01",
+        "members": ["Member 3", "Member 4"],
+        "leader": {
+            "id": 2,
+            "name": "Thomas De Vries",
+            "mail": "de.vries.thomas@supperters.com",
+            "phone": "+32 987 654 321"
+        },
+        "isRemote": false,
+        "status": "Temporarily Closed"
+    },
+    {
+        "id": 3,
+        "name": "Anna banana",
+        "description": "Deze groep is voor mensen die kampen met annorexia",
+        "numberOfMembers": 7,
+        "profileImage": "url_to_image_1",
+        "dateStarted": "2022-01-01",
+        "members": ["Member 1", "Member 2"],
+        "leader": {
+            "id": 1,
+            "name": "Chana Weiser",
+            "mail": "weiser.chana@supperters.com",
+            "phone": "+32 123 456 789"
+        },
+        "isRemote": true,
+        "status": "Closed"
+    },
+    {
+        "id": 4,
+        "name": "Werk aan de winkel",
+        "description": "Dit is een groep voor mensen die om eender welke reden, behalve pensioen, arbeidsongeschikt zijn",
+        "numberOfMembers": 15,
+        "profileImage": "url_to_image_2",
+        "dateStarted": "2022-02-01",
+        "members": ["Member 3", "Member 4"],
+        "leader": {
+            "id": 3,
+            "name": "Verra kaufman",
+            "mail": "kaufman.verra@supporters.com",
+            "phone": "+32 369 258 147"
+        },
+        "isRemote": false,
+        "status": "Upcoming"
+    },
+    {
+        "id": 5,
+        "name": "Support Group 1",
+        "description": "This is support group 1",
+        "numberOfMembers": 10,
+        "profileImage": "url_to_image_1",
+        "dateStarted": "2022-01-01",
+        "members": ["Member 1", "Member 2"],
+        "leader": {
+            "id": 1,
+            "name": "Leader 1",
+            "mail": "leader1@mail.com",
+            "phone": "123-456-7890"
+        },
+        "isRemote": true,
+        "status": "Active"
+    },
+    {
+        "id": 6,
+        "name": "Support Group 2",
+        "description": "This is support group 2",
+        "numberOfMembers": 15,
+        "profileImage": "url_to_image_2",
+        "dateStarted": "2022-02-01",
+        "members": ["Member 3", "Member 4"],
+        "leader": {
+            "id": 2,
+            "name": "Leader 2",
+            "mail": "leader2@mail.com",
+            "phone": "098-765-4321"
+        },
+        "isRemote": false,
+        "status": "Temporarily Closed"
+    },
+    {
+        "id": 7,
+        "name": "Support Group 1",
+        "description": "This is support group 1",
+        "numberOfMembers": 10,
+        "profileImage": "url_to_image_1",
+        "dateStarted": "2022-01-01",
+        "members": ["Member 1", "Member 2"],
+        "leader": {
+            "id": 1,
+            "name": "Leader 1",
+            "mail": "leader1@mail.com",
+            "phone": "123-456-7890"
+        },
+        "isRemote": true,
+        "status": "Active"
+    },
+    {
+        "id": 8,
+        "name": "Support Group 2",
+        "description": "This is support group 2",
+        "numberOfMembers": 15,
+        "profileImage": "url_to_image_2",
+        "dateStarted": "2022-02-01",
+        "members": ["Member 3", "Member 4"],
+        "leader": {
+            "id": 2,
+            "name": "Leader 2",
+            "mail": "leader2@mail.com",
+            "phone": "098-765-4321"
+        },
+        "isRemote": false,
+        "status": "Temporarily Closed"
+    },
+    {
+        "id": 9,
+        "name": "Support Group 1",
+        "description": "This is support group 1",
+        "numberOfMembers": 10,
+        "profileImage": "url_to_image_1",
+        "dateStarted": "2022-01-01",
+        "members": ["Member 1", "Member 2"],
+        "leader": {
+            "id": 1,
+            "name": "Leader 1",
+            "mail": "leader1@mail.com",
+            "phone": "123-456-7890"
+        },
+        "isRemote": true,
+        "status": "Active"
+    },
+    {
+        "id": 10,
+        "name": "Support Group 2",
+        "description": "This is support group 2",
+        "numberOfMembers": 15,
+        "profileImage": "url_to_image_2",
+        "dateStarted": "2022-02-01",
+        "members": ["Member 3", "Member 4"],
+        "leader": {
+            "id": 2,
+            "name": "Leader 2",
+            "mail": "leader2@mail.com",
+            "phone": "098-765-4321"
+        },
+        "isRemote": false,
+        "status": "Temporarily Closed"
+    }
+]

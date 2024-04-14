@@ -1,15 +1,15 @@
 import express, { Express} from "express";
-import elements from './assets/elements.json';
-import scientists from './assets/scientists.json';
-import {Element,Discoverer} from './interfaces'
+import groups from './assets/groups.json';
+import leaders from './assets/leaders.json';
+import {Group,Leader} from './interfaces'
 
-const elementsArray : Element[] = [];
-for(let i = 0; i<elements.length;i++){
-    elementsArray.push(elements[i])
+const groupsArray : Group[] = [];
+for(let i = 0; i<groups.length;i++){
+    groupsArray.push(groups[i])
 }
-const scientistsArray : Discoverer[] = [];
-    for(let i = 0; i<scientists.length;i++){
-        scientistsArray.push(scientists[i])
+const leaderArray : Leader[] = [];
+    for(let i = 0; i<leaders.length;i++){
+        leaderArray.push(leaders[i])
     }
 
 const app = express();
@@ -19,59 +19,59 @@ app.set("view engine", "ejs");
 app.get('/',(req,res) => {
     res.type('text/html');
     res.status(200);
-    res.render('index', {elements:elementsArray})
+    res.render('index', {groups:groupsArray})
 })
 
-app.get('/elements',(req,res) => {
+app.get('/groups',(req,res) => {
 res.type('text/html');
 res.status(200);
-res.render('elements', {elements:elementsArray, q:""})
+res.render('groups', {groups:groupsArray, q:""})
 })
 
-app.get('/elements/:id', (req,res) => {
-    const id = req.params.id;
-    const element = elementsArray.find((element) => element.id === id);
+app.get('/groups/:id', (req,res) => {
+    const id = parseInt(req.params.id);
+    const group = groupsArray.find((group) => group.id === id);
     
-    if(element){
+    if(group){
         res.type('text/html');
         res.status(200);
-        res.render('element', {element:element})
+        res.render('group', {group:group})
     }else{
         res.type('text/html');
         res.status(404);
-        res.send("Element not found")
+        res.send("Group not found")
     }
 })
 
 app.get('/search',(req,res) => {
     let q : string = typeof req.query.q == 'string' ? req.query.q : "";
-    let filteredElements : Element[] = elements.filter((element) => { 
-        return element.name.toLowerCase().startsWith(q.toLowerCase())});
+    let filteredGroups : Group[] = groups.filter((group) => { 
+        return group.name.toLowerCase().startsWith(q.toLowerCase())});
         res.type('text/html');
         res.status(200);
-        res.render('elements', {elements:filteredElements, q:q})
+        res.render('groups', {groups:filteredGroups, q:q})
 })
 
 
-app.get('/scientists',(req,res) => {
+app.get('/leaders',(req,res) => {
     
     res.type('text/html');
     res.status(200);
-    res.render('scientists', {scientists:scientistsArray})
+    res.render('leaders', {leaders:leaderArray})
 })
 
-app.get('/scientists/:id', (req,res) => {
-    const id = req.params.id;
-    const scientist = scientistsArray.find((scientist) => scientist.id === id);
+app.get('/leaders/:id', (req,res) => {
+    const id = parseInt(req.params.id);
+    const leader = leaderArray.find((leader) => leader.id === id);
     
-    if(scientist){
+    if(leader){
         res.type('text/html');
         res.status(200);
-        res.render('scientist', {scientist:scientist})
+        res.render('leader', {leader:leader})
     }else{
         res.type('text/html');
         res.status(404);
-        res.send("Scientist not found")
+        res.send("Leader not found")
     }
 })
 

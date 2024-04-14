@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Chana Weiser",
+        "mail": "weiser.chana@supperters.com",
+        "phone": "+32 123 456 789"
+    },
+    {
+        "id": 2,
+        "name": "Thomas De Vries",
+        "mail": "de.vries.thomas@supperters.com",
+        "phone": "+32 987 654 321"
+    },
+    {
+        "id": 3,
+        "name": "Verra kaufman",
+        "mail": "kaufman.verra@supporters.com",
+        "phone": "+32 369 258 147"
+    }
+]

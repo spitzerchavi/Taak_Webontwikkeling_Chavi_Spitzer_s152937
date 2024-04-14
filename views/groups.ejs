@@ -1,0 +1,19 @@
+<%- include('partials/header') %>
+<%- include('search') %>
+    <table>
+        <% for(let i=0;i<groups.length;i++) { %>
+        <tr>
+            <td><a href="groups/<%=groups[i].id%>"><%=groups[i].name%></a></td>
+            <td><%=groups[i].numberOfembers%></td>
+            <% if(groups[i].isRemote == true) { %>
+                <td>Remote</td>
+            <% } else { %>
+                <td>Op locatie</td>
+            <% } %>
+            <td><%=groups[i].leader.name%></td>
+            <td><%=groups[i].status%></td>
+       </tr>
+    <% } %>
+    </table>
+
+<%- include('partials/footer') %>

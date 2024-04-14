@@ -1,0 +1,15 @@
+<%-include('partials/header')%>
+
+<p><%=group.name%></p>
+<p><%=group.description%></p>
+<p><%=group.numberOfMembers%></p>
+<p><%=group.isRemote%></p>
+<p><%=group.dateStarted%></p>
+<p><%=group.status%></p>
+<p><a href="/leaders/<%=group.leader.id%>"><%=group.leader.name%></a></p>
+<% for(let i = 0; i<group.numberOfMembers; i++){ %>
+    <p><%= group.mermbers[i] %></p>
+<% } %>
+
+
+<%-include('partials/footer')%>

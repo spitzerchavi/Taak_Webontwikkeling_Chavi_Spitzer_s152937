@@ -1,22 +1,19 @@
-export interface Element {
-    id: string,
+export interface Group {
+    id: number,
     name: string,
     description: string,
-    valenceElectrons: number,
-    synthetic: boolean,
-    imgUrl: string,
-    type: string,
-    discoveryDate: number,
-    discoverer: Discoverer,
-    use: string[]
+    numberOfMembers: number,
+    profileImage: string,
+    dateStarted: string,
+    members: string[],
+    leader: Leader,
+    isRemote: boolean,
+    status: string
 }
 
-export interface Discoverer {
-    id: string,
+export interface Leader {
+    id: number,
     name: string,
-    birthDate: string,
-    passingDate: string,
-    nationality: string,
-    description: string,
-    imgUrl: string
+    mail: string,
+    phone: string
 }
