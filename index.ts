@@ -15,6 +15,7 @@ const leaderArray : Leader[] = [];
 const app = express();
 app.set("port", 3000);
 app.set("view engine", "ejs");
+app.use(express.static('public'));
 
 app.get('/',(req,res) => {
     res.type('text/html');
