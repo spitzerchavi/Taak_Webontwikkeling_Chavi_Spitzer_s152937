@@ -1,16 +1,38 @@
 <%-include('partials/header')%>
 
 <img src="<%= group.profileImage %>" alt="" width="200" height="200">
-<p><%=group.name%></p>
-<p><%=group.description%></p>
-<p><%=group.numberOfMembers%></p>
-<p><%=group.isRemote%></p>
-<p><%=group.dateStarted%></p>
-<p><%=group.status%></p>
-<p><a href="/leaders/<%=group.leader.id%>"><%=group.leader.name%></a></p>
-<% for(let i = 0; i<group.numberOfMembers; i++){ %>
-    <p><%= group.members[i] %></p>
-<% } %>
+<p id="groupName"><%=group.name%></p>
+<p id="description"><%=group.description%></p>
+<p>Aantal leden: <%=group.numberOfMembers%></p>
+<p>Bijeenkomsten via Zoom: <%=group.isRemote%></p>
+<p>Van start gegaan: <%=group.dateStarted%></p>
+<p>Status: <%=group.status%></p>
+<p>Groepsleider: <a href="/leaders/<%=group.leader.id%>"><%=group.leader.name%></a></p>
+<ul id="members">Members: 
+    <% for(let i = 0; i<group.numberOfMembers; i++){ %>
+        <li><%= group.members[i] %></li>
+    <% } %>
+</ul>
+
+<form action="/groups/<%= group.id %>/update" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="<%= group.name %>">
+    <label for="description">Description:</label>
+    <input type="text" id="description" name="description" value="<%= group.description %>">
+    <label for="isRemote">Is remote:</label>
+    <select id="isRemote" name="isRemote">
+        <option value="true" <%= group.isRemote === true ? 'selected' : '' %>>Yes</option>
+        <option value="false" <%= group.isRemote === false ? 'selected' : '' %>>No</option>
+    </select>
+    <label for="status">Status:</label>
+    <select id="status" name="status">
+        <option value="Active" <%= group.status === 'Active' ? 'selected' : '' %>>Active</option>
+        <option value="Closed" <%= group.status === 'Closed' ? 'selected' : '' %>>Closed</option>
+        <option value="Temporarily Closed" <%= group.status === 'Temporarily Closed' ? 'selected' : '' %>>Temporarily Closed</option>
+        <option value="Upcoming" <%= group.status === 'Upcoming' ? 'selected' : '' %>>Upcoming</option>
+    </select>
+    <button type="submit">Update</button></form>
+</form>
 
 
 <%-include('partials/footer')%>

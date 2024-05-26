@@ -1,16 +1,11 @@
 import express, { Express} from "express";
-import groups from './assets/groups.json';
-import leaders from './assets/leaders.json';
-import {Group,Leader} from './interfaces'
+import {Supportgroup,Leader,User} from './interfaces';
+import {connect, getGroups, getGroupByID, getLeaderByID, getLeaders, searchGroups, updateGroup, login} from './database';
 
-const groupsArray : Group[] = [];
-for(let i = 0; i<groups.length;i++){
-    groupsArray.push(groups[i])
-}
-const leaderArray : Leader[] = [];
-    for(let i = 0; i<leaders.length;i++){
-        leaderArray.push(leaders[i])
-    }
+const groupsArray : Promise<Supportgroup[]> = getGroups();
+console.log(groupsArray);
+const leaderArray : Promise<Leader[]> = getLeaders();
+console.log(leaderArray);
 
 const app = express();
 app.set("port", 3000);
@@ -24,14 +19,14 @@ app.get('/',(req,res) => {
 })
 
 app.get('/groups',(req,res) => {
-res.type('text/html');
-res.status(200);
-res.render('groups', {groups:groupsArray, q:""})
+    res.type('text/html');
+    res.status(200);
+    res.render('groups', {groups:groupsArray, q:""})
 })
 
 app.get('/groups/:id', (req,res) => {
     const id = parseInt(req.params.id);
-    const group = groupsArray.find((group) => group.id === id);
+    const group = getGroupByID(id);
     
     if(group){
         res.type('text/html');
@@ -46,13 +41,11 @@ app.get('/groups/:id', (req,res) => {
 
 app.get('/search',(req,res) => {
     let q : string = typeof req.query.q == 'string' ? req.query.q : "";
-    let filteredGroups : Group[] = groups.filter((group) => { 
-        return group.name.toLowerCase().startsWith(q.toLowerCase())});
+    let filteredGroups : Promise<Supportgroup[]> = searchGroups(q, groupsArray);
         res.type('text/html');
         res.status(200);
         res.render('groups', {groups:filteredGroups, q:q})
 })
-
 
 app.get('/leaders',(req,res) => {
     
@@ -63,7 +56,7 @@ app.get('/leaders',(req,res) => {
 
 app.get('/leaders/:id', (req,res) => {
     const id = parseInt(req.params.id);
-    const leader = leaderArray.find((leader) => leader.id === id);
+    const leader = getLeaderByID(id);
     
     if(leader){
         res.type('text/html');
@@ -76,6 +69,40 @@ app.get('/leaders/:id', (req,res) => {
     }
 })
 
-app.listen(app.get("port"), () => {
+app.post('/groups/:id/update', (req,res) => {
+
+    const id = parseInt(req.params.id);
+    const name = req.body.name;
+    const description = req.body.description;
+    const status = req.body.status;
+    const isRemote = req.body.isRemote;
+
+    updateGroup(id, name, description, status, isRemote);
+
+    res.redirect('/groups/' + id);
+})
+
+app.get('/login',(req,res) => {
+    res.type('text/html');
+    res.status(200);
+    res.render('login')
+})
+ 
+app.post('/login', async (req,res) => {
+    const email = req.body.username;
+    const password = req.body.password;
+    try {
+        let user: User = await login(email, password);
+        req.session.user = user;
+        req.session.message = { type: "success", message: "Login successful" };
+        res.redirect("/")
+    } catch (e: any) {
+        req.session.message = { type: "error", message: e.message };
+        res.redirect('/login');
+    }
+});
+
+app.listen(app.get("port"), async() => {
+    await connect();
     console.log("Server started on http://localhost:" + app.get('port'));
 });

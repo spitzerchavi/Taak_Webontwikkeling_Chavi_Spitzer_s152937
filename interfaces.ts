@@ -1,4 +1,4 @@
-export interface Group {
+export interface Supportgroup {
     id: number,
     name: string,
     description: string,
@@ -16,4 +16,14 @@ export interface Leader {
     name: string,
     mail: string,
     phone: string
+}
+
+export interface User {
+    name: string,
+    passwd: string
+}
+
+export interface FlashMessage {
+    type: "error" | "success" | "info"
+    message: string;
 }

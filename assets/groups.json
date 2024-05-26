@@ -69,104 +69,104 @@
     },
     {
         "id": 5,
-        "name": "Support Group 1",
-        "description": "This is support group 1",
-        "numberOfMembers": 10,
+        "name": "Moving forward",
+        "description": "Dit is een onderseuningsgroup voor mensen die naar het buitenland zijn verhuisd",
+        "numberOfMembers": 11,
         "profileImage": "https://raw.githubusercontent.com/spitzerchavi/Taak_Webontwikkeling_Chavi_Spitzer_s152937/main/public/group.jpg",
         "dateStarted": "2022-01-01",
         "members": ["Member 1", "Member 2"],
         "leader": {
-            "id": 1,
-            "name": "Leader 1",
-            "mail": "leader1@mail.com",
-            "phone": "123-456-7890"
+            "id": 3,
+            "name": "Verra kaufman",
+            "mail": "kaufman.verra@supporters.com",
+            "phone": "+32 369 258 147"
         },
         "isRemote": true,
         "status": "Active"
     },
     {
         "id": 6,
-        "name": "Support Group 2",
-        "description": "This is support group 2",
-        "numberOfMembers": 15,
+        "name": "Roling around",
+        "description": "Dit is een groep die ondersteuning biedt aan mensen met een handicap en die in een rolstoel zitten",
+        "numberOfMembers": 11,
         "profileImage": "https://raw.githubusercontent.com/spitzerchavi/Taak_Webontwikkeling_Chavi_Spitzer_s152937/main/public/group.jpg",
         "dateStarted": "2022-02-01",
         "members": ["Member 3", "Member 4"],
         "leader": {
-            "id": 2,
-            "name": "Leader 2",
-            "mail": "leader2@mail.com",
-            "phone": "098-765-4321"
+            "id": 1,
+            "name": "Chana Weiser",
+            "mail": "weiser.chana@supporters.com",
+            "phone": "+32 123 456 789"
         },
         "isRemote": false,
         "status": "Temporarily Closed"
     },
     {
         "id": 7,
-        "name": "Support Group 1",
-        "description": "This is support group 1",
+        "name": "Fill the void",
+        "description": "Deze supportgroep is voor mensen die een geliefde hebben verloren en die steun nodig hebben om verder te gaan met hun leven",
         "numberOfMembers": 10,
         "profileImage": "https://raw.githubusercontent.com/spitzerchavi/Taak_Webontwikkeling_Chavi_Spitzer_s152937/main/public/group.jpg",
         "dateStarted": "2022-01-01",
         "members": ["Member 1", "Member 2"],
         "leader": {
-            "id": 1,
-            "name": "Leader 1",
-            "mail": "leader1@mail.com",
-            "phone": "123-456-7890"
+            "id": 2,
+            "name": "Thomas De Vries",
+            "mail": "de.vries.thomas@supporters.com",
+            "phone": "+32 987 654 321"
         },
         "isRemote": true,
         "status": "Active"
     },
     {
         "id": 8,
-        "name": "Support Group 2",
-        "description": "This is support group 2",
-        "numberOfMembers": 15,
+        "name": "The big T",
+        "description": "Dit is een groep die ondersteuning biedt op vlak van traumaverwerking",
+        "numberOfMembers": 21,
         "profileImage": "https://raw.githubusercontent.com/spitzerchavi/Taak_Webontwikkeling_Chavi_Spitzer_s152937/main/public/group.jpg",
         "dateStarted": "2022-02-01",
         "members": ["Member 3", "Member 4"],
         "leader": {
-            "id": 2,
-            "name": "Leader 2",
-            "mail": "leader2@mail.com",
-            "phone": "098-765-4321"
+            "id": 1,
+            "name": "Chana Weiser",
+            "mail": "weiser.chana@supporters.com",
+            "phone": "+32 123 456 789"
         },
         "isRemote": false,
-        "status": "Temporarily Closed"
+        "status": "Upcoming"
     },
     {
         "id": 9,
-        "name": "Support Group 1",
-        "description": "This is support group 1",
+        "name": "Tapestry",
+        "description": "Dit is een ondersteuningsgroep voor ouders die een kind op jonge leeftijd hebben verloren",
         "numberOfMembers": 10,
         "profileImage": "https://raw.githubusercontent.com/spitzerchavi/Taak_Webontwikkeling_Chavi_Spitzer_s152937/main/public/group.jpg",
         "dateStarted": "2022-01-01",
         "members": ["Member 1", "Member 2"],
         "leader": {
-            "id": 1,
-            "name": "Leader 1",
-            "mail": "leader1@mail.com",
-            "phone": "123-456-7890"
+            "id": 2,
+            "name": "Thomas De Vries",
+            "mail": "de.vries.thomas@supporters.com",
+            "phone": "+32 987 654 321"
         },
         "isRemote": true,
         "status": "Active"
     },
     {
         "id": 10,
-        "name": "Support Group 2",
-        "description": "This is support group 2",
-        "numberOfMembers": 15,
+        "name": "Connections with love",
+        "description": "Dit is een groep voor mensen die een partner met een mentale beperking hebben",
+        "numberOfMembers": 16,
         "profileImage": "https://raw.githubusercontent.com/spitzerchavi/Taak_Webontwikkeling_Chavi_Spitzer_s152937/main/public/group.jpg",
         "dateStarted": "2022-02-01",
         "members": ["Member 3", "Member 4"],
         "leader": {
-            "id": 2,
-            "name": "Leader 2",
-            "mail": "leader2@mail.com",
-            "phone": "098-765-4321"
+            "id": 3,
+            "name": "Verra kaufman",
+            "mail": "kaufman.verra@supporters.com",
+            "phone": "+32 369 258 147"
         },
         "isRemote": false,
-        "status": "Temporarily Closed"
+        "status": "Closed"
     }
 ]
